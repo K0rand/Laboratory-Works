@@ -1,0 +1,29 @@
+#include<iostream>
+#include<math.h>
+#include<Windows.h>
+
+using namespace std;
+
+void func_1(int a){	
+	bool m = true;
+	for (int i = 2; i <= a / 2; i++) {
+		if (a % i == 0) {
+			m = false;
+			break;
+		}
+	}
+		if (m && a != 1)
+			cout << "Число є простим";
+		else
+			cout << "Число не є простим";
+}
+
+int main(){
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	int a;
+	cout << "Введіть число: ";
+	cin >> a;
+	func_1(a);
+	return 0;
+}
