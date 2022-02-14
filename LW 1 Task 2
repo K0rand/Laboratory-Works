@@ -1,0 +1,51 @@
+#include<iostream>
+#include<windows.h>
+
+using namespace std;
+
+void input(int N, int *arr)
+{
+    //Даєм значення елементам масиву від -50 до 50
+    for (int i = 0; i < N; i++)
+    {
+        arr[i] = rand() % 100 - 50;
+    }
+}
+
+void out(int N, int *arr)
+{
+    cout << "Елементи масиву" << endl;
+    //Виводим значення кожного елемента масиву
+    for (int i = 0; i < N; i++)
+    {
+        cout << arr[i] << "  ";
+    }
+    cout << endl;
+}
+
+void MaxNumber(int N, int* arr)
+{
+    int a = 0;
+    //Цикл на перевірку найбільшого масиву
+    for (int i = 0; i < N; i++)
+    {
+        if (a < arr[i])
+        {
+            a = arr[i];
+        }
+    }
+    cout << "Найбільше число масиву: " << a << endl;
+}
+
+int main()
+{
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    int N;
+    cout << "Введіть к-сть масиву" << endl;
+    cin >> N;
+    int* arr = new int[N];
+    input(N, arr);
+    out(N, arr);
+    MaxNumber(N, arr);
+}
